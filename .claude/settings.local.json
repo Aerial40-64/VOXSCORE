@@ -47,7 +47,10 @@
       "Bash(mv DeputyCard.tsx CoherenceRing.tsx CoherenceBadge.tsx CategoryBadge.tsx VoteBadge.tsx LawCard.tsx GradientBackground.tsx CommunePicker.tsx components/)",
       "Bash(rm -f components/.gitkeep)",
       "Bash(ls app/ app/\\\\\\(tabs\\\\\\)/ components/ hooks/ constants/ types/)",
-      "Bash(cd:*)"
+      "Bash(cd:*)",
+      "Bash(npx expo:*)",
+      "Bash(rm -rf node_modules)",
+      "Bash(npm install:*)"
     ],
     "deny": []
   },

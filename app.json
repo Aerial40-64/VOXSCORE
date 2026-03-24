@@ -12,7 +12,9 @@
       "resizeMode": "contain",
       "backgroundColor": "#0D0008"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": false,
       "bundleIdentifier": "com.gamechangerbuilds.voxscore"
@@ -46,7 +48,8 @@
           "organization": "game-changer-builds",
           "project": "voxscore"
         }
-      ]
+      ],
+      "@sentry/react-native"
     ],
     "experiments": {
       "typedRoutes": true
