@@ -6,7 +6,7 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { X, Search, MapPin } from 'lucide-react-native';
 import { supabase } from '@/lib/supabase';
-import { useTheme } from '@/contexts/ThemeContext';
+import { useTheme } from '@/hooks/useTheme';
 import { Shadows } from '@/constants/colors';
 
 export interface PostalCodeCommune {

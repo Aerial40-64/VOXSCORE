@@ -5,7 +5,7 @@ import { MapPin, ChevronRight } from 'lucide-react-native';
 import { Deputy } from '@/types/database';
 import CoherenceRing, { getScoreColor } from '@/components/common/CoherenceRing';
 import { Shadows } from '@/constants/colors';
-import { useTheme } from '@/contexts/ThemeContext';
+import { useTheme } from '@/hooks/useTheme';
 
 interface DeputyCardProps {
   deputy: Deputy;

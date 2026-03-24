@@ -5,7 +5,7 @@ import { ChevronDown, ChevronUp, TrendingUp, TrendingDown, DollarSign } from 'lu
 import { Law } from '@/types/database';
 import CategoryBadge from '@/components/common/CategoryBadge';
 import { Shadows } from '@/constants/colors';
-import { useTheme } from '@/contexts/ThemeContext';
+import { useTheme } from '@/hooks/useTheme';
 
 interface LawCardProps {
   law: Law;

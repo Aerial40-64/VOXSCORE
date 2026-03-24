@@ -35,7 +35,19 @@
       "mcp__plugin_context7_context7__query-docs",
       "WebSearch",
       "Bash(gh --version)",
-      "Bash(gh auth:*)"
+      "Bash(gh auth:*)",
+      "Bash(openspec new:*)",
+      "Bash(openspec status:*)",
+      "Bash(openspec instructions:*)",
+      "Bash(mkdir -p app/\\\\\\(tabs\\\\\\) app/depute app/loi components services stores types constants hooks)",
+      "Bash(touch app/.gitkeep app/\\\\\\(tabs\\\\\\)/.gitkeep app/depute/.gitkeep app/loi/.gitkeep components/.gitkeep services/.gitkeep stores/.gitkeep types/.gitkeep constants/.gitkeep hooks/.gitkeep)",
+      "Bash(mv colors.ts constants/colors.ts)",
+      "Bash(mv design-tokens.json constants/design-tokens.json)",
+      "Bash(rm -f constants/.gitkeep)",
+      "Bash(mv DeputyCard.tsx CoherenceRing.tsx CoherenceBadge.tsx CategoryBadge.tsx VoteBadge.tsx LawCard.tsx GradientBackground.tsx CommunePicker.tsx components/)",
+      "Bash(rm -f components/.gitkeep)",
+      "Bash(ls app/ app/\\\\\\(tabs\\\\\\)/ components/ hooks/ constants/ types/)",
+      "Bash(cd:*)"
     ],
     "deny": []
   },
