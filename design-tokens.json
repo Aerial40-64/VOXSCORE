@@ -1,0 +1,398 @@
+{
+  "meta": {
+    "project": "VoxScore",
+    "source": "Hemicycle V1 — bolt.new — analyse complète du 23/03/2026",
+    "stack_confirmed": "React Native + Expo + expo-linear-gradient + react-native-svg + lucide-react-native + expo-router + Supabase",
+    "instructions": "Source de vérité design absolue pour VoxScore V2. Ne jamais hardcoder couleurs ou tailles. Toujours importer depuis ce fichier ou constants/colors.ts."
+  },
+
+  "stack": {
+    "framework":    "React Native (Expo)",
+    "router":       "expo-router",
+    "gradient":     "expo-linear-gradient",
+    "svg":          "react-native-svg",
+    "icons":        "lucide-react-native",
+    "backend":      "Supabase (@supabase/supabase-js)",
+    "theme":        "Context API — useTheme() → colors object (light/dark auto)",
+    "safe_area":    "react-native-safe-area-context",
+    "note":         "Stack 100% compatible VoxScore V2 — aucune migration nécessaire"
+  },
+
+  "colors": {
+
+    "semantic": {
+      "kept":         "#00C87A",
+      "keptLight":    "#D0FAE8",
+      "keptDark":     "#006640",
+      "broken":       "#FF3355",
+      "brokenLight":  "#FFE5EA",
+      "brokenDark":   "#8C001E",
+      "partial":      "#FF8C00",
+      "partialLight": "#FFF0D9",
+      "partialDark":  "#7A3E00",
+      "absent":       "#A0AEC0",
+      "absentLight":  "#EDF2F7",
+      "pour":         "#00C87A",
+      "contre":       "#FF3355",
+      "abstention":   "#FF8C00"
+    },
+
+    "brand_light": {
+      "primary":          "#FF3870",
+      "primaryMid":       "#FF6B9D",
+      "primaryLight":     "#FF3870",
+      "accent":           "#FF9A00",
+      "accentMid":        "#FFB347",
+      "accentLight":      "rgba(255,255,255,0.70)",
+      "accentMedium":     "rgba(255,255,255,0.50)",
+      "background":       "transparent",
+      "surface":          "rgba(255,255,255,0.75)",
+      "surfaceElevated":  "rgba(255,255,255,0.90)",
+      "surfaceDark":      "rgba(30,10,20,0.75)",
+      "border":           "rgba(255,56,112,0.18)",
+      "borderLight":      "rgba(255,56,112,0.10)",
+      "textPrimary":      "#1A0A14",
+      "textSecondary":    "#5A2A40",
+      "textTertiary":     "#A06080",
+      "textInverse":      "#FFFFFF",
+      "textInverseSoft":  "rgba(255,255,255,0.75)"
+    },
+
+    "brand_dark": {
+      "primary":          "#FF3870",
+      "primaryMid":       "#FF6B9D",
+      "primaryLight":     "#FF6B9D",
+      "accent":           "#FF9A00",
+      "accentMid":        "#FFB347",
+      "accentLight":      "rgba(255,255,255,0.08)",
+      "accentMedium":     "rgba(255,255,255,0.15)",
+      "background":       "transparent",
+      "surface":          "rgba(30,10,20,0.70)",
+      "surfaceElevated":  "rgba(40,15,28,0.85)",
+      "surfaceDark":      "rgba(10,0,8,0.80)",
+      "border":           "rgba(255,107,157,0.20)",
+      "borderLight":      "rgba(255,107,157,0.10)",
+      "textPrimary":      "#FFF0F5",
+      "textSecondary":    "#E0B0C8",
+      "textTertiary":     "#A07090",
+      "textInverse":      "#FFFFFF",
+      "textInverseSoft":  "rgba(255,255,255,0.55)"
+    },
+
+    "parties": {
+      "RE":   { "light": "#FF8C00", "dark": "#FF8C00" },
+      "RN":   { "light": "#3B82F6", "dark": "#60A5FA" },
+      "LFI":  { "light": "#FF3355", "dark": "#FF6080" },
+      "LR":   { "light": "#3B82F6", "dark": "#60A5FA" },
+      "PS":   { "light": "#E91E8C", "dark": "#F472B6" },
+      "EELV": { "light": "#00C87A", "dark": "#34D399" }
+    }
+  },
+
+  "gradients": {
+    "main_light": {
+      "colors":    ["#FF3870", "#FF7A5A", "#FFB89A", "#FFF0E8"],
+      "start":     { "x": 0, "y": 0 },
+      "end":       { "x": 0.4, "y": 1 },
+      "note":      "4 stops — dégradé rose → saumon → pêche → blanc cassé"
+    },
+    "main_dark": {
+      "colors":    ["#4A0A20", "#2D0A1A", "#1A0810", "#0F050A"],
+      "start":     { "x": 0, "y": 0 },
+      "end":       { "x": 0.4, "y": 1 },
+      "note":      "4 stops — bordeaux profond vers noir"
+    }
+  },
+
+  "shadows": {
+    "note": "Ombres teintées #FF3870 — signature visuelle à conserver absolument",
+    "sm": {
+      "shadowColor": "#FF3870", "shadowOffset": { "width": 0, "height": 2 },
+      "shadowOpacity": 0.10, "shadowRadius": 8, "elevation": 2
+    },
+    "md": {
+      "shadowColor": "#FF3870", "shadowOffset": { "width": 0, "height": 4 },
+      "shadowOpacity": 0.15, "shadowRadius": 14, "elevation": 5
+    },
+    "lg": {
+      "shadowColor": "#FF3870", "shadowOffset": { "width": 0, "height": 8 },
+      "shadowOpacity": 0.22, "shadowRadius": 24, "elevation": 10
+    },
+    "fab": {
+      "shadowColor": "#FF3870", "shadowOffset": { "width": 0, "height": 6 },
+      "shadowOpacity": 0.20, "shadowRadius": 14, "elevation": 8
+    }
+  },
+
+  "components": {
+
+    "GradientBackground": {
+      "file": "components/common/GradientBackground.tsx",
+      "description": "Fond dégradé 4 stops — wrapping global de toutes les screens",
+      "usage": "<GradientBackground>{children}</GradientBackground>",
+      "dependencies": ["expo-linear-gradient", "contexts/ThemeContext"],
+      "props": { "children": "ReactNode" },
+      "note": "Gère automatiquement light/dark via useTheme(). À utiliser sur toutes les screens."
+    },
+
+    "CoherenceRing": {
+      "file": "components/common/CoherenceRing.tsx",
+      "description": "Anneau SVG style Apple Watch — composant central des fiches élus",
+      "usage": "<CoherenceRing score={78} size={120} strokeWidth={8} showLabel dark />",
+      "dependencies": ["react-native-svg", "constants/colors"],
+      "props": {
+        "score":       "number (0-100) — requis",
+        "size":        "number — défaut 80",
+        "strokeWidth": "number — défaut 8",
+        "showLabel":   "boolean — affiche 'Excellent/Bon/Moyen/Faible/Très faible'",
+        "dark":        "boolean — texte blanc pour fond sombre"
+      },
+      "score_thresholds": {
+        ">=70": { "color": "#00C87A", "label": "Bon/Excellent" },
+        ">=40": { "color": "#FF8C00", "label": "Moyen/Faible" },
+        "<40":  { "color": "#FF3355", "label": "Très faible" }
+      },
+      "label_thresholds": {
+        ">=80": "Excellent",
+        ">=70": "Bon",
+        ">=55": "Moyen",
+        ">=40": "Faible",
+        "<40":  "Très faible"
+      },
+      "exports": ["default CoherenceRing", "getScoreColor(score)", "getScoreLabel(score)"],
+      "note": "fontSize = size × 0.26 (score) et size × 0.14 (label /100) — responsive automatique"
+    },
+
+    "VoteBadge": {
+      "file": "components/common/VoteBadge.tsx",
+      "description": "Pastille vote avec border teinté — 3 tailles disponibles",
+      "usage": "<VoteBadge vote='pour' size='md' />",
+      "dependencies": ["constants/colors"],
+      "props": {
+        "vote": "'pour' | 'contre' | 'abstention' | 'absent'",
+        "size": "'sm' | 'md' | 'lg' — défaut 'md'"
+      },
+      "variants": {
+        "pour":       { "label": "POUR",        "bg": "#D0FAE8", "text": "#006640", "border": "#00C87A" },
+        "contre":     { "label": "CONTRE",      "bg": "#FFE5EA", "text": "#8C001E", "border": "#FF3355" },
+        "abstention": { "label": "ABSTENTION",  "bg": "#FFF0D9", "text": "#7A3E00", "border": "#FF8C00" },
+        "absent":     { "label": "ABSENT",      "bg": "#EDF2F7", "text": "#A0AEC0", "border": "#A0AEC0" }
+      },
+      "sizes": {
+        "sm": { "fontSize": 9,  "px": 6,  "py": 3, "radius": 5 },
+        "md": { "fontSize": 10, "px": 8,  "py": 4, "radius": 6 },
+        "lg": { "fontSize": 12, "px": 12, "py": 5, "radius": 8 }
+      },
+      "note": "border = couleur principale + opacité 40 (hex '40' = 25%)"
+    },
+
+    "CoherenceBadge": {
+      "file": "components/common/CoherenceBadge.tsx",
+      "description": "Badge texte avec icône Lucide — 3 états de cohérence",
+      "usage": "<CoherenceBadge coherence='respected' showIcon />",
+      "dependencies": ["lucide-react-native", "constants/colors"],
+      "props": {
+        "coherence": "'respected' | 'broken' | 'partial'",
+        "showIcon":  "boolean — défaut true"
+      },
+      "variants": {
+        "respected": { "label": "Promesse tenue",         "bg": "#D0FAE8", "color": "#00C87A", "icon": "CheckCircle" },
+        "broken":    { "label": "Promesse brisée",        "bg": "#FFE5EA", "color": "#FF3355", "icon": "XCircle"    },
+        "partial":   { "label": "Partiellement tenue",    "bg": "#FFF0D9", "color": "#FF8C00", "icon": "AlertCircle"}
+      }
+    },
+
+    "CategoryBadge": {
+      "file": "components/common/CategoryBadge.tsx",
+      "description": "Badge couleur par catégorie thématique — couleurs indépendantes du thème",
+      "usage": "<CategoryBadge category='Environnement' />",
+      "categories": {
+        "Social":        { "bg": "#F0F4FF", "color": "#1E4FD8" },
+        "Economie":      { "bg": "#FFF7E6", "color": "#B45309" },
+        "Immigration":   { "bg": "#FFF0F3", "color": "#BE123C" },
+        "Environnement": { "bg": "#ECFDF5", "color": "#047857" },
+        "Justice":       { "bg": "#EFF6FF", "color": "#1D4ED8" },
+        "Numerique":     { "bg": "#F0FEFF", "color": "#0E7490" },
+        "Sante":         { "bg": "#FDF4FF", "color": "#9333EA" },
+        "Education":     { "bg": "#FFF7ED", "color": "#C2410C" },
+        "fallback":      { "bg": "#F1F5F9", "color": "#64748B" }
+      },
+      "note": "À étendre pour VoxScore — ajouter : Securite, Logement, Agriculture, Energie, Transports"
+    },
+
+    "DeputyCard": {
+      "file": "components/DeputyCard.tsx",
+      "description": "Carte député complète avec photo, parti, score, stats — mode compact disponible",
+      "usage": "<DeputyCard deputy={deputy} compact={false} />",
+      "dependencies": ["expo-router", "lucide-react-native", "CoherenceRing", "constants/colors", "contexts/ThemeContext"],
+      "props": {
+        "deputy":  "Deputy (type database)",
+        "compact": "boolean — défaut false. Si true : masque le footer stats"
+      },
+      "features": [
+        "Navigation auto vers /depute/{id} via expo-router",
+        "Photo avec fallback initiales (prénom[0] + nom[0])",
+        "Point de couleur parti en badge sur la photo",
+        "Badge parti coloré dynamique",
+        "CoherenceRing intégré (size 66 normal, 58 compact)",
+        "Footer : nb mandats + taux absences + score CTA (masqué en compact)",
+        "Absences > 20% affichées en rouge automatiquement"
+      ],
+      "type_deputy_fields": [
+        "id", "first_name", "name", "photo_url", "department",
+        "coherence_score", "mandates_count", "absences_rate",
+        "party.color", "party.short_name"
+      ]
+    },
+
+    "LawCard": {
+      "file": "components/LawCard.tsx",
+      "description": "Carte loi expandable avec impacts, barre de votes, coût estimé",
+      "usage": "<LawCard law={law} showDetails={false} />",
+      "dependencies": ["expo-router", "lucide-react-native", "CategoryBadge", "constants/colors", "contexts/ThemeContext"],
+      "props": {
+        "law":         "Law (type database)",
+        "showDetails": "boolean — défaut false. Contrôle état initial expanded"
+      },
+      "features": [
+        "Navigation auto vers /loi/{id} via expo-router",
+        "Badge catégorie + badge résultat (Adoptée/Rejetée/En cours)",
+        "Titre court + description expandable (2 lignes par défaut)",
+        "Section impacts positifs (TrendingUp vert)",
+        "Section impacts négatifs (TrendingDown rouge)",
+        "Coût estimé si disponible",
+        "Barre de votes colorée Pour/Contre/Abstention",
+        "Bouton Voir le détail / Réduire"
+      ],
+      "vote_results": {
+        "adopted":  { "label": "Adoptée",   "bg": "keptLight",    "color": "kept"    },
+        "rejected": { "label": "Rejetée",   "bg": "brokenLight",  "color": "broken"  },
+        "pending":  { "label": "En cours",  "bg": "partialLight", "color": "partial" }
+      },
+      "type_law_fields": [
+        "id", "title_short", "description_simple", "category", "vote_result",
+        "vote_date", "positive_impacts[]", "negative_impacts[]",
+        "estimated_cost", "pour_count", "contre_count", "abstention_count"
+      ]
+    },
+
+    "CommunePicker": {
+      "file": "components/CommunePicker.tsx",
+      "description": "Modal de sélection de commune par code postal — connecté Supabase",
+      "usage": "<CommunePicker visible postalCode='75001' communes={[]} onSelect={fn} onClose={fn} />",
+      "dependencies": ["supabase", "lucide-react-native", "react-native-safe-area-context", "contexts/ThemeContext"],
+      "features": [
+        "Modal slide-up (pageSheet)",
+        "Filtre de recherche si >5 communes",
+        "FlatList optimisée avec keyExtractor",
+        "Affiche département + numéro de circonscription",
+        "Reset filtre à chaque ouverture"
+      ],
+      "type_PostalCodeCommune": {
+        "code":                 "string",
+        "commune_name":         "string",
+        "department_name":      "string",
+        "constituency_number":  "number",
+        "deputy_id":            "string"
+      },
+      "note_voxscore": "À adapter pour VoxScore — renommer deputy_id en politician_id, ajouter chamber"
+    }
+  },
+
+  "typography": {
+    "font": "System (SF Pro sur iOS, Roboto sur Android)",
+    "weights_used": {
+      "600": "Semi-bold — titres secondaires, labels",
+      "700": "Bold — badges, catégories, noms",
+      "800": "Extra-bold — noms de députés, scores, titres principaux"
+    },
+    "letter_spacing": {
+      "tight":    -0.3,
+      "normal":    0,
+      "wide":      0.3,
+      "wider":     0.6,
+      "badge":     1.0
+    },
+    "sizes": {
+      "score_hero":  "size * 0.26 (CoherenceRing — dynamique)",
+      "title_lg":    20,
+      "title_md":    16,
+      "body":        14,
+      "small":       13,
+      "caption":     12,
+      "badge":       11,
+      "micro":        9
+    }
+  },
+
+  "border_radius": {
+    "card_deputy":  18,
+    "card_law":     16,
+    "card_commune": 12,
+    "badge":         6,
+    "button":       10,
+    "icon_wrap":    10,
+    "avatar":       27,
+    "party_dot":     7,
+    "close_btn":    18,
+    "pill":        999
+  },
+
+  "spacing": {
+    "screen_h_padding":  20,
+    "card_padding":      16,
+    "card_gap":          12,
+    "section_gap":       24,
+    "badge_px_sm":        6,
+    "badge_px_md":        8,
+    "badge_px_lg":       12,
+    "list_gap":          10
+  },
+
+  "new_categories_to_add": {
+    "note": "À ajouter dans CategoryBadge.tsx pour VoxScore V2",
+    "Securite":     { "bg": "#F8F0FF", "color": "#7C3AED" },
+    "Logement":     { "bg": "#FFF8F0", "color": "#D97706" },
+    "Agriculture":  { "bg": "#F0FFF4", "color": "#15803D" },
+    "Energie":      { "bg": "#FEFCE8", "color": "#A16207" },
+    "Transports":   { "bg": "#EFF6FF", "color": "#2563EB" },
+    "Defense":      { "bg": "#F0F0FF", "color": "#4338CA" }
+  },
+
+  "adaptations_for_voxscore": {
+    "note": "Modifications nécessaires pour passer de Hemicycle V1 à VoxScore V2",
+    "changes": [
+      "DeputyCard : ajouter is_radar_alert (badge alerte catimini rouge)",
+      "DeputyCard : ajouter chamber (Enum Assemblée/Sénat) dans le header",
+      "LawCard : ajouter barometre_data (Pour%/Contre%/Neutre%) avec BarometerDonut",
+      "LawCard : ajouter is_radar_alert (bannière rouge 'Loi en catimini')",
+      "LawCard : vote_result ajouter 'en_debat' pour les lois en cours de barometre",
+      "CommunePicker : renommer deputy_id → politician_id",
+      "Nouveau composant : BarometerDonut (graphique anneau Pour/Neutre/Contre)",
+      "Nouveau composant : RadarAlertBanner (bandeau alerte catimini)",
+      "Nouveau composant : PetitionCard (carte pétition native avec jauge)",
+      "Nouveau composant : SplitScreen (Promesse vs Vote — l'écran viral)"
+    ]
+  },
+
+  "files_to_copy": {
+    "from_hemicycle_to_voxscore_design_tokens": [
+      "constants/colors.ts               → design-tokens/constants/colors.ts",
+      "components/common/CoherenceRing.tsx    → design-tokens/components/CoherenceRing.tsx",
+      "components/common/VoteBadge.tsx        → design-tokens/components/VoteBadge.tsx",
+      "components/common/CoherenceBadge.tsx   → design-tokens/components/CoherenceBadge.tsx",
+      "components/common/CategoryBadge.tsx    → design-tokens/components/CategoryBadge.tsx",
+      "components/common/GradientBackground.tsx → design-tokens/components/GradientBackground.tsx",
+      "components/DeputyCard.tsx              → design-tokens/components/DeputyCard.tsx",
+      "components/LawCard.tsx                 → design-tokens/components/LawCard.tsx",
+      "components/CommunePicker.tsx           → design-tokens/components/CommunePicker.tsx",
+      "assets/images/favicon.png              → design-tokens/assets/favicon.png",
+      "assets/images/icon.png                 → design-tokens/assets/icon.png"
+    ]
+  },
+
+  "prompt_for_ai": {
+    "note": "Coller ce bloc en PREMIER MESSAGE dans Antigravity avant de commencer VoxScore",
+    "template": "Pour VoxScore, réutilise exactement les composants du dossier /design-tokens/components/ sans les réécrire. Stack confirmée : React Native + Expo + expo-router + expo-linear-gradient + react-native-svg + lucide-react-native + Supabase. Règles absolues : (1) Gradient 4 stops : ['#FF3870','#FF7A5A','#FFB89A','#FFF0E8'] direction (0,0)→(0.4,1) via GradientBackground.tsx. (2) Toutes ombres = shadowColor '#FF3870' (voir Shadows dans colors.ts). (3) Cohérent=#00C87A, Incohérent=#FF3355, Partiel=#FF8C00. (4) Glassmorphism : surface rgba(255,255,255,0.75) + blur 12px. (5) Font weights : 700 pour badges, 800 pour titres et scores. (6) CoherenceRing utilise react-native-svg — ne pas remplacer par une autre lib. (7) Toutes les couleurs viennent de constants/colors.ts — jamais de valeurs hardcodées. Consulte /design-tokens/design-tokens.json pour toute décision de style."
+  }
+}

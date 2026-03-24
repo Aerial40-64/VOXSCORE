@@ -1,0 +1,49 @@
+# Environment variables — NEVER commit these
+.env
+.env.local
+.env.*.local
+.env.development
+.env.production
+.env.staging
+
+# Expo / React Native
+node_modules/
+.expo/
+dist/
+build/
+ios/
+android/
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+web-build/
+
+# EAS
+.easignore
+
+# Logs
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+# macOS
+.DS_Store
+*.pem
+
+# TypeScript
+*.tsbuildinfo
+
+# Editor
+.vscode/
+*.swp
+*.swo
+
+# Supabase local
+supabase/.branches
+supabase/.temp
+
+# NOTE: .claude/ is intentionally NOT ignored — keep Claude Code config in git
